@@ -142,6 +142,7 @@ footer {
 }
 
 .programm-page {
+  font-family: "Open Sans";
   max-width: 1630px;
   width: 100%;
   margin: auto;
@@ -648,6 +649,26 @@ footer {
   flex-wrap: wrap;
   gap: 30px;
   .news-item {
+    &.important-news {
+      .news-item__image {
+        &:before {
+          position: absolute;
+          left: 0;
+          top: 20px;
+          content: "Важная новость";
+          text-transform: uppercase;
+          padding: 4px 10px;
+          border-radius: 0px 100px 100px 0px;
+          background: #e12733;
+          color: #fff;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          text-transform: uppercase;
+        }
+      }
+    }
     display: flex;
     flex-direction: column;
     padding-bottom: 30px;
@@ -657,6 +678,7 @@ footer {
     border-radius: 0px 0px 4px 4px;
   }
   .news-item__image {
+    position: relative;
     flex-shrink: 0;
     height: 240px;
     width: 100%;
