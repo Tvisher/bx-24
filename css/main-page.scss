@@ -687,3 +687,53 @@
 .show-more-btn-wrapper {
   display: flex;
 }
+
+.slider-section.half-or-full {
+  .swiper-slide {
+    cursor: pointer;
+  }
+  .section-title-wrapper._slider-section {
+    padding-left: 0;
+  }
+  .slider-section__slider {
+    padding: 0;
+    max-height: 402px;
+  }
+  .slide-descr {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .slider-section__slider .swiper-button-prev,
+  .slider-section__slider .swiper-button-next {
+    height: 55px;
+    width: 40px;
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+  &.video-galery {
+    .swiper-slide {
+      position: relative;
+      &::before {
+        pointer-events: none;
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='61' height='38' viewBox='0 0 61 38' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M59.5656 8.1451C59.5604 8.10634 59.5551 8.07116 59.5483 8.03264C59.4664 7.56644 58.8405 4.29752 57.1648 2.79557C54.8774 0.673323 52.3113 0.6648 51.1388 0.536954C42.7198 1.01603e-07 30.0913 0 30.0913 0H30.0624C30.0624 0 17.4339 1.01603e-07 9.01489 0.536954C7.84237 0.6648 5.2763 0.673323 2.98894 2.79557C1.32067 4.29078 0.692952 7.53712 0.606494 8.02619C0.598892 8.06919 0.593174 8.10782 0.587412 8.15111C0.514869 8.69608 -1.14569e-08 12.7055 -1.14569e-08 16.7223V20.7707C-1.14569e-08 24.7947 0.527115 28.8186 0.597698 29.3394C0.602952 29.3782 0.608196 29.4133 0.614968 29.4519C0.696922 29.9181 1.32276 33.187 2.99855 34.6889C5.28591 36.8112 8.29408 36.743 9.62997 36.9646C14.3361 37.3653 29.4402 37.4961 30.0619 37.5014C30.0817 37.5015 30.0861 37.5015 30.106 37.5015C30.7225 37.5003 42.9342 37.4708 51.1388 36.9475C52.3113 36.8197 54.8774 36.8112 57.1648 34.6889C58.8405 33.187 59.4664 29.9181 59.5483 29.4519C59.5551 29.4133 59.5604 29.3782 59.5656 29.3394C59.6362 28.8186 60.1633 24.7947 60.1633 20.7707V16.7223C60.1633 12.6904 59.6362 8.66591 59.5656 8.1451Z' fill='black' fill-opacity='0.25'/%3e%3cpath d='M23.875 10.6797V25.6633L40.1268 18.197L23.875 10.6797Z' fill='%23EAEAEA'/%3e%3c/svg%3e ");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        width: 60px;
+        height: 38px;
+      }
+    }
+  }
+}
+
+.fancybox__infobar {
+  display: flex;
+  align-items: center;
+}
