@@ -616,7 +616,7 @@
   font-family: "Open Sans";
   display: flex;
   gap: 20px;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   color: #0c3551;
 
   .large-num-block {
@@ -629,25 +629,27 @@
     border: 1px solid #e6e9f0;
     background: #f7f9fb;
     box-shadow: 0px 2px 0px 0px #e7e9ed;
+    flex-grow: 1;
+    flex-basis: 50%;
   }
 
-  &.three-col {
-    .large-num-block {
-      width: calc(33.33% - 13.33px);
-    }
-  }
-  &.two-col {
-    .large-num-block {
-      width: calc(50% - 20px);
-    }
-  }
-  &.one-col {
-    .large-num-block {
-      flex-direction: row;
-      align-items: center;
-      gap: 40px;
-    }
-  }
+  // &.three-col {
+  //   .large-num-block {
+  //     width: calc(33.33% - 13.33px);
+  //   }
+  // }
+  // &.two-col {
+  //   .large-num-block {
+  //     width: calc(50% - 20px);
+  //   }
+  // }
+  // &.one-col {
+  //   .large-num-block {
+  //     flex-direction: row;
+  //     align-items: center;
+  //     gap: 40px;
+  //   }
+  // }
 
   .large-num {
     font-size: 88px;
@@ -883,8 +885,8 @@
     height: 420px;
     flex: auto;
   }
-  .large-nums.three-col .large-num-block {
-    width: calc(50% - 15px);
+  .large-nums {
+    flex-wrap: wrap;
   }
   .main-page {
     gap: 20px;
