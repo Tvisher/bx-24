@@ -343,6 +343,10 @@
   }
 }
 
+.tabs__slider {
+  width: 100%;
+}
+
 .tabs__slide {
   border-radius: 4px;
   border: 1px solid #e6e9f0;
@@ -511,6 +515,9 @@
         font-weight: 700;
         line-height: normal;
         @include pruning(7);
+      }
+      .news-item__img {
+        display: none;
       }
     }
   }
@@ -1042,4 +1049,13 @@
     line-height: normal;
     text-transform: uppercase;
   }
+}
+
+.news-item__tags {
+  padding-top: 20px;
+  margin-top: auto;
+}
+.news-list .news-item__footer {
+  padding-top: 20px;
+  margin-top: 0;
 }

@@ -1,0 +1,344 @@
+@font-face {
+  font-family: "Factor A";
+  src: url("../fonts/FactorA-Bold.woff2") format("woff2"),
+    url("../fonts/FactorA-Bold.woff") format("woff"),
+    url("../fonts/FactorA-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Factor A";
+  src: url("../fonts/FactorALight-Regular.woff2") format("woff2"),
+    url("../fonts/FactorALight-Regular.woff") format("woff"),
+    url("../fonts/FactorALight-Regular.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-Bold.woff2") format("woff2")
+      url("../fonts/OpenSans-Bold.woff") format("woff"),
+    url("../fonts/OpenSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-SemiBold.woff2") format("woff2")
+      url("../fonts/OpenSans-SemiBold.woff") format("woff"),
+    url("../fonts/OpenSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-Regular.woff2") format("woff2")
+      url("../fonts/OpenSans-Regular.woff") format("woff"),
+    url("../fonts/OpenSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 p,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd,
+span,
+p {
+  margin: 0;
+  line-height: initial;
+}
+
+span {
+  display: block;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+
+label,
+input {
+  display: block;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
+  display: inline;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+input:focus,
+button:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+} /*# sourceMappingURL=reset.css.map */
+
+html {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  line-height: 100%;
+  color: #fff;
+  height: 100%;
+}
+
+body {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+footer {
+  margin-top: auto;
+  width: 100%;
+  overflow: hidden;
+}
+
+.page-w {
+  font-family: "Open Sans";
+  max-width: 1960px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px;
+}
+
+.news-section.two-col {
+  width: calc(50% - 15px);
+  .news-list {
+    .news-item {
+      width: calc(50% - 15px);
+    }
+  }
+}
+.news-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  .news-item {
+    border-radius: 8px;
+    border: 1px solid #f1f5f6;
+    box-shadow: 0px 2px 0px 0px #e7e9ed;
+    &.important-news {
+      .news-item__image {
+        &:before {
+          position: absolute;
+          left: 0;
+          top: 20px;
+          content: "Важная новость";
+          text-transform: uppercase;
+          padding: 4px 10px;
+          border-radius: 0px 100px 100px 0px;
+          background: #e12733;
+          color: #fff;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          text-transform: uppercase;
+        }
+      }
+    }
+    display: flex;
+    flex-direction: column;
+    padding-bottom: clamp(10px, 2vw, 30px);
+    width: calc(25% - 22.5px);
+    background: #fff;
+    box-shadow: 0px 2px 0px 0px #e7e9ed;
+    border-radius: 0px 0px 4px 4px;
+  }
+  .news-item__image {
+    position: relative;
+    flex-shrink: 0;
+    aspect-ratio: 16/9;
+    width: 100%;
+    border-radius: 4px 4px 0px 0px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .news-item__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: clamp(10px, 2vw, 30px);
+    padding-bottom: 0;
+  }
+
+  .news-item__title {
+    color: #0c3551 !important;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 133%; /* 133.333% */
+    margin-bottom: 10px;
+  }
+
+  .news-item__descr {
+    // margin-bottom: 2cap;
+    color: #535c69;
+    font-family: "Open Sans";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+  }
+  .news-item__tag {
+    color: #245ba7;
+    font-family: "Open Sans";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 100px;
+    width: fit-content;
+    border: 1px solid #245ba7;
+  }
+  .news-item__footer {
+    flex-wrap: wrap;
+    padding-top: 30px;
+    margin-top: auto;
+    display: flex;
+    color: #535c69;
+    font-family: "Open Sans";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    gap: 10px 20px;
+  }
+  .news-item__views,
+  .news-item__likes,
+  .news-item__comments {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    &::before {
+      display: block;
+      content: "";
+      width: 16px;
+      height: 16px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+  }
+
+  .news-item__views::before {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='17' height='16' viewBox='0 0 17 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M15.2215 7.59688C13.7402 4.47656 11.5012 2.90625 8.4996 2.90625C5.49648 2.90625 3.25898 4.47656 1.77773 7.59844C1.71831 7.72425 1.6875 7.86165 1.6875 8.00078C1.6875 8.13991 1.71831 8.27732 1.77773 8.40312C3.25898 11.5234 5.49804 13.0938 8.4996 13.0938C11.5027 13.0938 13.7402 11.5234 15.2215 8.40156C15.3418 8.14844 15.3418 7.85469 15.2215 7.59688V7.59688ZM8.4996 11.9688C5.97929 11.9688 4.13398 10.6906 2.83241 8C4.13398 5.30938 5.97929 4.03125 8.4996 4.03125C11.0199 4.03125 12.8652 5.30938 14.1668 8C12.8668 10.6906 11.0215 11.9688 8.4996 11.9688ZM8.4371 5.25C6.91835 5.25 5.6871 6.48125 5.6871 8C5.6871 9.51875 6.91835 10.75 8.4371 10.75C9.95585 10.75 11.1871 9.51875 11.1871 8C11.1871 6.48125 9.95585 5.25 8.4371 5.25ZM8.4371 9.75C7.46991 9.75 6.6871 8.96719 6.6871 8C6.6871 7.03281 7.46991 6.25 8.4371 6.25C9.40429 6.25 10.1871 7.03281 10.1871 8C10.1871 8.96719 9.40429 9.75 8.4371 9.75Z' fill='%230C3551'/%3e%3c/svg%3e ");
+  }
+  .news-item__likes::before {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M4.9873 12.2332L7.05397 13.8331C7.32064 14.0998 7.92064 14.2331 8.32064 14.2331H10.854C11.654 14.2331 12.5206 13.6331 12.7206 12.8331L14.3206 7.96648C14.654 7.03315 14.054 6.23315 13.054 6.23315H10.3873C9.98731 6.23315 9.65397 5.89982 9.72064 5.43315L10.054 3.29982C10.1873 2.69982 9.7873 2.03315 9.1873 1.83315C8.65397 1.63315 7.9873 1.89982 7.72064 2.29982L4.9873 6.36648' stroke='%230C3551' stroke-miterlimit='10'/%3e%3cpath d='M1.58691 12.2331V5.69977C1.58691 4.76644 1.98691 4.43311 2.92025 4.43311H3.58691C4.52025 4.43311 4.92025 4.76644 4.92025 5.69977V12.2331C4.92025 13.1664 4.52025 13.4998 3.58691 13.4998H2.92025C1.98691 13.4998 1.58691 13.1664 1.58691 12.2331Z' stroke='%230C3551' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
+  }
+  .news-item__comments::before {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M13.333 1.3335H2.66634C1.93101 1.3335 1.33301 1.9315 1.33301 2.66683V14.6668L4.88834 12.0002H13.333C14.0683 12.0002 14.6663 11.4022 14.6663 10.6668V2.66683C14.6663 1.9315 14.0683 1.3335 13.333 1.3335ZM13.333 10.6668H4.44434L2.66634 12.0002V2.66683H13.333V10.6668Z' fill='%230C3551'/%3e%3c/svg%3e ");
+  }
+}
+
+.news-item__tags {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+}
+
+@media (max-width: 1560px) {
+  .news-list .news-item {
+    width: calc(33.33% - 20px);
+  }
+}
+
+@media (max-width: 1200px) {
+  .news-list .news-item {
+    width: calc(50% - 15px);
+  }
+}
+
+@media (max-width: 768px) {
+  .news-list .news-item {
+    width: 100%;
+  }
+}
