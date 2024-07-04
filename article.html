@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Статья</title>
 
+
+
+</head>
+
+<body>
     <script src="./js/fancybox.umd.js"></script>
     <script src="./js/swiper-bundle.min.js"></script>
     <script src="./js/jquery.min.js"></script>
@@ -13,10 +18,6 @@
     <link rel="stylesheet" href="./css/fancybox.css" />
     <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/article.min.css" />
-
-</head>
-
-<body>
     <div class="page-w">
         <div class="article__wrapper">
             <div class="article__content">
@@ -456,7 +457,7 @@
 
                 <hr>
                 <div class="add-rating">
-                    <div class="add-rating__btn active">
+                    <div class="add-rating__btn ">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                 d="M11.8549 0.138531C13.0239 0.535334 13.8235 1.81597 13.5637 3.04879L13.0898 6.08187C13.0717 6.21465 13.1107 6.28786 13.1452 6.32694C13.1852 6.37226 13.2506 6.40697 13.3365 6.40697H17.1604C18.0713 6.40697 18.8741 6.77639 19.3627 7.43952C19.853 8.10489 19.9609 8.97719 19.6552 9.84153L17.371 16.7891C17.1743 17.5445 16.6795 18.1694 16.09 18.6007C15.4941 19.0367 14.7511 19.3126 14.0057 19.3126H10.373C10.0169 19.3126 9.5922 19.2548 9.19613 19.1416C8.83212 19.0376 8.40266 18.8618 8.08685 18.5651L5.15419 16.2946L6.03202 15.1608L9.03147 17.4829L9.0636 17.5151C9.12731 17.5788 9.2994 17.6798 9.59007 17.7628C9.86317 17.8409 10.1554 17.8786 10.373 17.8786H14.0057C14.4074 17.8786 14.8594 17.7243 15.2433 17.4434C15.6267 17.1629 15.8919 16.7937 15.9868 16.4142L15.9931 16.3889L18.3013 9.36825C18.4695 8.8972 18.3855 8.53061 18.2083 8.29014C18.0278 8.04509 17.6834 7.84093 17.1604 7.84093H13.3365C12.3391 7.84093 11.5117 6.98877 11.6707 5.87539L11.6721 5.86609L12.1536 2.78442L12.1586 2.76213C12.2644 2.28604 11.9263 1.67381 11.389 1.49472L11.3764 1.49052L11.364 1.48586C11.1699 1.41309 10.9149 1.41476 10.6538 1.50452C10.3879 1.59593 10.196 1.75109 10.1092 1.88142L10.1077 1.88367L6.18816 7.7151L4.99805 6.91519L8.91603 1.086C8.91631 1.08558 8.91659 1.08516 8.91688 1.08473C9.21245 0.642129 9.68932 0.319759 10.1877 0.148442C10.6877 -0.0234267 11.2879 -0.0701422 11.8549 0.138531Z"
@@ -535,32 +536,38 @@
             </div>
         </div>
     </div>
+    <script>
+        const imageGallery = new Swiper('.slider-gallery', {
+            autoHeight: true,
+            slidesPerView: 1,
+            loop: 1,
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        })
 
+        Fancybox.bind("[data-fancybox]");
+
+
+        $(".toggle-block__head").on("click", function () {
+            $(this).toggleClass('open')
+            $(this).parent().find('.toggle-block__body').slideToggle("slow");
+        });
+
+        const addRatingBlock = document.querySelector('.add-rating');
+        const addRatingBtn = document.querySelector('.add-rating__btn');
+        addRatingBtn.onclick = () => {
+            addRatingBlock.classList.add('complited')
+            addRatingBtn.querySelector('span').innerHTML = 'Оценено';
+        }
+    </script>
 </body>
 
-<script>
 
-    const imageGallery = new Swiper('.slider-gallery', {
-        autoHeight: true,
-        slidesPerView: 1,
-        loop: 1,
-        effect: 'fade',
-        fadeEffect: {
-            crossFade: true
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    })
-
-    Fancybox.bind("[data-fancybox]");
-
-
-    $(".toggle-block__head").on("click", function () {
-        $(this).toggleClass('open')
-        $(this).parent().find('.toggle-block__body').slideToggle("slow");
-    });
-</script>
 
 </html>

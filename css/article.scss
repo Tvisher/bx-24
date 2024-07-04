@@ -741,6 +741,19 @@ footer {
   gap: 30px;
   align-items: center;
   background: #f5f7f8;
+  &.complited {
+    background: #245ba7;
+    .add-rating__btn {
+      background: #fff;
+      color: #245ba7;
+      svg path {
+        fill: #245ba7;
+      }
+    }
+    .add-rating__text {
+      color: #fff;
+    }
+  }
 }
 
 @media (max-width: 1440px) {
